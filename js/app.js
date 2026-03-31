@@ -14,9 +14,6 @@
  * ============================================================================
  */
 
-// ----------------------------------------------------------------------------
-// 1. GESTIÓN DE NAVEGACIÓN (SPA) Y MENÚS ACTIVOS
-// ----------------------------------------------------------------------------
 const navMap = {
     'inicio': ['nav-inicio', 'mob-nav-inicio'],
     'historia': ['nav-acerca', 'subnav-historia', 'mob-nav-acerca', 'mob-subnav-historia'],
@@ -31,23 +28,17 @@ const navMap = {
 };
 
 function showSection(sectionId) {
-    // Ocultar todas las páginas
     document.querySelectorAll('.content-section').forEach(sec => sec.classList.add('hidden'));
-    
-    // Mostrar la página solicitada
     document.getElementById('sec-' + sectionId).classList.remove('hidden');
 
-    // Quitar estado activo de todos los menús
     document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
 
-    // Asignar el color anaranjado a la ruta correcta en el Menú
     const activeIds = navMap[sectionId] || [];
     activeIds.forEach(id => {
         const el = document.getElementById(id);
         if (el) el.classList.add('active');
     });
 
-    // Cerrar menú en celulares al seleccionar
     const mobileMenu = document.getElementById('mobile-menu');
     if(!mobileMenu.classList.contains('hidden') && window.innerWidth < 1024) {
         toggleMobileMenu();
@@ -75,8 +66,6 @@ function toggleMobDropdown(dropdownId) {
 // ----------------------------------------------------------------------------
 // 2. BASE DE DATOS LOCAL DE CUMPLEAÑOS
 // ----------------------------------------------------------------------------
-// Para agregar a alguien, copia una línea y respeta el formato { month, day, date, name, type, message }
-// Types: M-A (Masculino Adulto), F-A (Femenina Adulta), M-N (Niño/Joven), F-N (Niña/Joven)
 const birthdays = [
     // ENERO
     { month: 0, day: 1, date: "1 de Enero", name: "Maximiliano Sobarzo Henríquez", type: "M-N", message: "🎈 ¡Feliz cumpleaños, Maxi! Que el Señor te bendiga mucho en este día especial. Es una alegría verte crecer en nuestra congregación. ¡Un abrazo grande de parte de toda la iglesia!\n\n📖 *\"Instruye al niño en su camino, Y aun cuando fuere viejo no se apartará de él.\"* - Proverbios 22:6 (RVR1960)" },
@@ -115,8 +104,7 @@ const birthdays = [
     { month: 5, day: 4, date: "4 de Junio", name: "Hna. Carolina Elisabeth Mella", type: "F-A", message: "🎂 ¡Feliz cumpleaños, hermana Carolina! Deseamos que pase un día maravilloso y que el Señor le conceda las peticiones más profundas de su corazón.\n\n📖 *\"Bendito el varón que confía en Jehová, y cuya confianza es Jehová.\"* - Jeremías 17:7 (RVR1960)" },
     { month: 5, day: 30, date: "30 de Junio", name: "Hna. Maria Cristina Escobar", type: "F-A", message: "🌸 ¡Feliz cumpleaños, hermana Cristina! Bendecimos su vida y su vocación. Que el Señor multiplique su gracia sobre usted en este nuevo año.\n\n📖 *\"El alma generosa será prosperada; Y el que saciare, él también será saciado.\"* - Proverbios 11:25 (RVR1960)" },
 
-    // JULIO
-    { month: 6, day: 30, date: "30 de Julio", name: "Hna. Corina Ester Gonzalez", type: "F-A", message: "🌸 ¡Muy feliz cumpleaños, hermana Corina! Le enviamos un saludo con mucho amor. Que el Señor sea siempre su refugio y su fortaleza.\n\n📖 *\"Dios es nuestro amparo y fortaleza, Nuestro pronto auxilio en las tribulaciones.\"* - Salmos 46:1 (RVR1960)" },
+    // JULIO (Hermana Corina retirada de la lista)
 
     // AGOSTO
     { month: 7, day: 5, date: "5 de Agosto", name: "Hno. Rubén Orlando Solís", type: "M-A", message: "🎂 ¡Feliz cumpleaños, hermano Rubén! Que la gracia de Dios abunde en su vida y en su hogar durante este nuevo año que comienza hoy.\n\n📖 *\"Bienaventurado el varón que no anduvo en consejo de malos... Sino que en la ley de Jehová está su delicia.\"* - Salmos 1:1-2 (RVR1960)" },
@@ -157,10 +145,6 @@ const typeConfig = {
 
 let currentFilteredData = [...birthdays];
 
-
-// ----------------------------------------------------------------------------
-// 3. CÁLCULO DEL CONTADOR DE CUMPLEAÑOS
-// ----------------------------------------------------------------------------
 function calculateNextBirthday() {
     const today = new Date();
     today.setHours(0, 0, 0, 0); 
@@ -172,7 +156,6 @@ function calculateNextBirthday() {
     birthdays.forEach(b => {
         let bDate = new Date(currentYear, b.month, b.day);
         
-        // Si ya pasó este año, lo calculamos para el próximo
         if (bDate < today) {
             bDate.setFullYear(currentYear + 1);
         }
@@ -192,7 +175,6 @@ function calculateNextBirthday() {
         const alertBox = document.getElementById('next-birthday-alert');
         alertBox.classList.remove('hidden');
 
-        // Une los nombres si hay varios cumpliendo el mismo día
         const names = upcoming.map(b => b.name).join(' y ');
         document.getElementById('next-birthday-name').innerText = names;
         document.getElementById('next-birthday-date').innerText = upcoming[0].date;
@@ -200,7 +182,6 @@ function calculateNextBirthday() {
         let countText = minDays;
         let labelText = "Días";
 
-        // Textos Dinámicos
         if (minDays === 0) {
             countText = "¡HOY!";
             labelText = "¡Felicítalos!";
@@ -215,10 +196,6 @@ function calculateNextBirthday() {
     }
 }
 
-
-// ----------------------------------------------------------------------------
-// 4. LÓGICA DEL BUSCADOR Y FILTRO
-// ----------------------------------------------------------------------------
 function applyFilters() {
     const searchText = document.getElementById('search-name').value.toLowerCase();
     const selectedMonth = document.getElementById('filter-month').value;
@@ -238,14 +215,9 @@ function clearFilters() {
     applyFilters();
 }
 
-// Asignar los eventos a los controles del HTML
 document.getElementById('search-name').addEventListener('input', applyFilters);
 document.getElementById('filter-month').addEventListener('change', applyFilters);
 
-
-// ----------------------------------------------------------------------------
-// 5. RENDERIZADO DEL CALENDARIO E INYECCIÓN HTML
-// ----------------------------------------------------------------------------
 function renderCalendar(dataToRender, isFiltered = false) {
     const grid = document.getElementById('calendar-grid');
     grid.innerHTML = '';
@@ -255,7 +227,6 @@ function renderCalendar(dataToRender, isFiltered = false) {
     dataToRender.forEach(b => monthsData[b.month].push(b));
 
     monthsData.forEach((monthBirthdays, index) => {
-        // Filtrar visualmente los contenedores de los meses que no cumplen
         if (selectedMonth !== "all" && parseInt(selectedMonth) !== index) return;
         if (isFiltered && monthBirthdays.length === 0 && selectedMonth === "all") return;
 
@@ -298,7 +269,6 @@ function renderCalendar(dataToRender, isFiltered = false) {
         grid.appendChild(monthDiv);
     });
     
-    // Si se aplicaron filtros y no hay nada
     if(dataToRender.length === 0) {
         grid.innerHTML = `
             <div class="col-span-full flex flex-col items-center justify-center p-12 text-center bg-white/50 rounded-3xl border border-white/20 shadow-sm backdrop-blur-sm">
@@ -310,10 +280,6 @@ function renderCalendar(dataToRender, isFiltered = false) {
     }
 }
 
-
-// ----------------------------------------------------------------------------
-// 6. FUNCIONES DEL MODAL Y PORTAPAPELES
-// ----------------------------------------------------------------------------
 const modalBackdrop = document.getElementById('modal-backdrop');
 const modalContent = document.getElementById('modal-content');
 let currentMessage = "";
@@ -376,10 +342,6 @@ modalBackdrop.addEventListener('click', function(e) {
     if (e.target === modalBackdrop) closeModal();
 });
 
-
-// ----------------------------------------------------------------------------
-// 7. INICIALIZACIÓN
-// ----------------------------------------------------------------------------
 window.onload = () => {
     renderCalendar(birthdays);
     calculateNextBirthday();
