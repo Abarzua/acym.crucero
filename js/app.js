@@ -342,6 +342,31 @@ modalBackdrop.addEventListener('click', function(e) {
     if (e.target === modalBackdrop) closeModal();
 });
 
+// ----------------------------------------------------------------------------
+// 8. GALERÍA / MODAL DE IMÁGENES (LIGHTBOX)
+// ----------------------------------------------------------------------------
+const imageModal = document.getElementById('image-modal');
+const modalImageSrc = document.getElementById('modal-image-src');
+
+function openImageModal(src) {
+    modalImageSrc.src = src;
+    imageModal.classList.remove('hidden');
+    setTimeout(() => {
+        imageModal.classList.remove('opacity-0');
+        modalImageSrc.classList.remove('scale-95');
+        modalImageSrc.classList.add('scale-100');
+    }, 10);
+}
+
+function closeImageModal() {
+    imageModal.classList.add('opacity-0');
+    modalImageSrc.classList.remove('scale-100');
+    modalImageSrc.classList.add('scale-95');
+    
+    setTimeout(() => {
+        imageModal.classList.add('hidden');
+    }, 300);
+}
 window.onload = () => {
     renderCalendar(birthdays);
     calculateNextBirthday();
