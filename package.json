@@ -1,0 +1,21 @@
+{
+  "name": "acym-crucero-web",
+  "version": "1.0.0",
+  "description": "Plataforma Web Oficial - Iglesia ACyM Crucero",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "keywords": [
+    "iglesia",
+    "acym",
+    "crucero",
+    "spa",
+    "javascript"
+  ],
+  "author": "Yarvis & Colaboradores",
+  "license": "MIT"
+}
