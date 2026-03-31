@@ -76,6 +76,68 @@
                     <span class="font-bold text-xl md:text-2xl tracking-wide">ACyM Crucero</span>
                 </div>
                 
+                <div class="hidden lg:block">
+                    <div class="ml-8 flex items-center space-x-1">
+                        <button onclick="showSection('inicio')" id="nav-inicio" class="nav-item nav-main-desktop hover:text-acym-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Inicio</button>
+                        
+                        <div class="relative group">
+                            <button id="nav-acerca" class="nav-item nav-main-desktop hover:text-acym-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1.5">
+                                Acerca <i class="fa-solid fa-chevron-down text-xs mt-0.5"></i>
+                            </button>
+                            <div class="absolute left-0 mt-0 w-56 rounded-xl shadow-2xl bg-white ring-1 ring-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100 overflow-hidden pt-2">
+                                <button onclick="showSection('historia')" id="subnav-historia" class="nav-item nav-sub-desktop w-full text-left block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 transition-colors border-b">Nuestra Historia</button>
+                                <button onclick="showSection('mision')" id="subnav-mision" class="nav-item nav-sub-desktop w-full text-left block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 transition-colors border-b">Nuestra Misión</button>
+                                <button onclick="showSection('fe')" id="subnav-fe" class="nav-item nav-sub-desktop w-full text-left block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 transition-colors">Declaración de Fe</button>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <button id="nav-deptos" class="nav-item nav-main-desktop hover:text-acym-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1.5">
+                                Departamentos <i class="fa-solid fa-chevron-down text-xs mt-0.5"></i>
+                            </button>
+                            <div class="absolute left-0 mt-0 w-60 rounded-xl shadow-2xl bg-white ring-1 ring-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100 pt-2 pb-2">
+                                
+                                <div class="relative group/ecles">
+                                    <button id="subnav-ecles" class="nav-item nav-sub-desktop w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 transition-colors flex justify-between items-center border-b">
+                                        Eclesiásticos <i class="fa-solid fa-chevron-right text-xs"></i>
+                                    </button>
+                                    <div class="absolute top-0 left-full pl-1 w-48 opacity-0 invisible group-hover/ecles:opacity-100 group-hover/ecles:visible transition-all duration-200 z-50">
+                                        <div class="bg-white rounded-xl shadow-2xl ring-1 ring-black/5 py-1">
+                                            <button onclick="showSection('ufa')" id="subnav-ufa" class="nav-item nav-sub-desktop w-full text-left block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50">UFA</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="relative group/paraecles">
+                                    <button id="subnav-paraecles" class="nav-item nav-sub-desktop w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 transition-colors flex justify-between items-center">
+                                        Paraeclesiásticos <i class="fa-solid fa-chevron-right text-xs"></i>
+                                    </button>
+                                    <div class="absolute top-0 left-full pl-1 w-48 opacity-0 invisible group-hover/paraecles:opacity-100 group-hover/paraecles:visible transition-all duration-200 z-50">
+                                        <div class="bg-white rounded-xl shadow-2xl ring-1 ring-black/5 py-1">
+                                            <button onclick="showSection('eedd')" id="subnav-eedd" class="nav-item nav-sub-desktop w-full text-left block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 border-b">EEDD</button>
+                                            <button onclick="showSection('estudio')" id="subnav-estudio" class="nav-item nav-sub-desktop w-full text-left block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50">Estudio Bíblico</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <button id="nav-hermandad" class="nav-item nav-main-desktop hover:text-acym-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1.5">
+                                Hermandad <i class="fa-solid fa-chevron-down text-xs mt-0.5"></i>
+                            </button>
+                            <div class="absolute right-0 mt-0 w-56 rounded-xl shadow-2xl bg-white ring-1 ring-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100 overflow-hidden pt-2">
+                                <button onclick="showSection('consejo')" id="subnav-consejo" class="nav-item nav-sub-desktop w-full text-left block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 border-b">Consejo Ministerial</button>
+                                <button onclick="showSection('galeria')" id="subnav-galeria" class="nav-item nav-sub-desktop w-full text-left block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 border-b">Galería</button>
+                                <button onclick="showSection('cumpleanos')" id="subnav-cumpleanos" class="nav-item nav-sub-desktop w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 flex items-center justify-between">
+                                    Cumpleaños <i class="fa-solid fa-cake-candles text-gray-400"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
                 <div class="-mr-2 flex lg:hidden">
                     <button onclick="toggleMobileMenu()" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-200 hover:text-white hover:bg-white/10 transition-colors">
                         <i class="fa-solid fa-bars text-2xl" id="mobile-menu-icon"></i>
@@ -84,7 +146,52 @@
             </div>
         </div>
 
-        </nav>
+        <div id="mobile-menu" class="hidden lg:hidden glass-nav border-t border-white/10 shadow-xl absolute w-full left-0 max-h-[80vh] overflow-y-auto">
+            <div class="px-4 pt-2 pb-6 space-y-1 sm:px-6">
+                <button onclick="showSection('inicio')" id="mob-nav-inicio" class="nav-item nav-main-mobile text-white w-full text-left block px-3 py-3 rounded-md text-base font-medium hover:bg-white/10">Inicio</button>
+                
+                <button onclick="toggleMobDropdown('mob-acerca')" id="mob-nav-acerca" class="nav-item nav-main-mobile text-white w-full text-left flex justify-between items-center px-3 py-3 rounded-md text-base font-medium hover:bg-white/10">
+                    <span>Acerca</span><i class="fa-solid fa-chevron-down text-sm transition-transform" id="icon-mob-acerca"></i>
+                </button>
+                <div id="mob-acerca" class="hidden pl-6 pr-3 py-2 space-y-2 border-l-2 border-acym-orange/50 ml-3 mt-1">
+                    <button onclick="showSection('historia')" id="mob-subnav-historia" class="nav-item nav-sub-mobile text-gray-300 w-full text-left block px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-white/10">Nuestra Historia</button>
+                    <button onclick="showSection('mision')" id="mob-subnav-mision" class="nav-item nav-sub-mobile text-gray-300 w-full text-left block px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-white/10">Nuestra Misión</button>
+                    <button onclick="showSection('fe')" id="mob-subnav-fe" class="nav-item nav-sub-mobile text-gray-300 w-full text-left block px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-white/10">Declaración de Fe</button>
+                </div>
+
+                <button onclick="toggleMobDropdown('mob-deptos')" id="mob-nav-deptos" class="nav-item nav-main-mobile text-white w-full text-left flex justify-between items-center px-3 py-3 rounded-md text-base font-medium hover:bg-white/10">
+                    <span>Departamentos</span><i class="fa-solid fa-chevron-down text-sm transition-transform" id="icon-mob-deptos"></i>
+                </button>
+                <div id="mob-deptos" class="hidden pl-6 pr-3 py-2 space-y-2 border-l-2 border-acym-orange/50 ml-3 mt-1">
+                    <button onclick="toggleMobDropdown('mob-ecles')" id="mob-subnav-ecles" class="nav-item nav-sub-mobile text-gray-300 w-full text-left flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-white/10">
+                        <span>Eclesiásticos</span><i class="fa-solid fa-chevron-down text-xs transition-transform" id="icon-mob-ecles"></i>
+                    </button>
+                    <div id="mob-ecles" class="hidden pl-6 pr-3 py-2 space-y-2 border-l-2 border-gray-500 ml-3 mt-1">
+                        <button onclick="showSection('ufa')" id="mob-subnav-ufa" class="nav-item nav-sub-mobile text-gray-400 w-full text-left block px-3 py-2 rounded-md text-sm hover:text-white hover:bg-white/10">UFA</button>
+                    </div>
+
+                    <button onclick="toggleMobDropdown('mob-paraecles')" id="mob-subnav-paraecles" class="nav-item nav-sub-mobile text-gray-300 w-full text-left flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-white/10">
+                        <span>Paraeclesiásticos</span><i class="fa-solid fa-chevron-down text-xs transition-transform" id="icon-mob-paraecles"></i>
+                    </button>
+                    <div id="mob-paraecles" class="hidden pl-6 pr-3 py-2 space-y-2 border-l-2 border-gray-500 ml-3 mt-1">
+                        <button onclick="showSection('eedd')" id="mob-subnav-eedd" class="nav-item nav-sub-mobile text-gray-400 w-full text-left block px-3 py-2 rounded-md text-sm hover:text-white hover:bg-white/10">EEDD</button>
+                        <button onclick="showSection('estudio')" id="mob-subnav-estudio" class="nav-item nav-sub-mobile text-gray-400 w-full text-left block px-3 py-2 rounded-md text-sm hover:text-white hover:bg-white/10">Estudio Bíblico</button>
+                    </div>
+                </div>
+
+                <button onclick="toggleMobDropdown('mob-hermandad')" id="mob-nav-hermandad" class="nav-item nav-main-mobile text-white w-full text-left flex justify-between items-center px-3 py-3 rounded-md text-base font-medium hover:bg-white/10">
+                    <span>Hermandad</span><i class="fa-solid fa-chevron-down text-sm transition-transform" id="icon-mob-hermandad"></i>
+                </button>
+                <div id="mob-hermandad" class="hidden pl-6 pr-3 py-2 space-y-2 border-l-2 border-acym-orange/50 ml-3 mt-1">
+                    <button onclick="showSection('consejo')" id="mob-subnav-consejo" class="nav-item nav-sub-mobile text-gray-300 w-full text-left block px-3 py-2 rounded-md text-sm hover:text-white hover:bg-white/10">Consejo Ministerial</button>
+                    <button onclick="showSection('galeria')" id="mob-subnav-galeria" class="nav-item nav-sub-mobile text-gray-300 w-full text-left block px-3 py-2 rounded-md text-sm hover:text-white hover:bg-white/10">Galería</button>
+                    <button onclick="showSection('cumpleanos')" id="mob-subnav-cumpleanos" class="nav-item nav-sub-mobile text-gray-300 w-full text-left flex items-center justify-between px-3 py-2 rounded-md text-sm hover:text-white hover:bg-white/10">
+                        <span>Cumpleaños</span> <i class="fa-solid fa-cake-candles opacity-50 text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <main class="flex-grow w-full px-4 md:px-8 pb-16">
         
@@ -95,24 +202,66 @@
             <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">Bienvenido a nuestra familia</h1>
             <h2 class="text-2xl md:text-3xl font-light opacity-90 mb-10">Iglesia ACyM Crucero</h2>
             
-            <div class="px-4 py-8 max-w-4xl mx-auto mb-8 bg-black/20 backdrop-blur-md rounded-3xl border border-white/10 shadow-2xl">
-                <h3 class="text-3xl md:text-4xl lg:text-[2.75rem] font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-200 tracking-[0.15em] uppercase leading-tight font-sans">
-                    Cristo <span class="text-acym-orangelight">Salva</span><br>
-                    Sana, Santifica<br>
-                    Y <span class="text-acym-orangelight">Rey que Viene Pronto!</span>
+            <div class="px-6 py-10 max-w-5xl mx-auto mb-8 bg-black/30 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl">
+                <h3 class="text-3xl md:text-4xl lg:text-[2.75rem] font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-200 tracking-[0.15em] uppercase leading-tight font-sans mb-10">
+                    Cristo <span class="text-acym-orangelight">Salva</span>,
+                    <span class="text-acym-orangelight">Santifica</span>,<br>
+                    <span class="text-acym-orangelight">Sana</span> y
+                    <span class="text-acym-orangelight">Viene Pronto</span>
                 </h3>
-                <div class="flex justify-center gap-6 mt-8 opacity-90 text-4xl md:text-5xl text-acym-orangelight drop-shadow-lg">
-                    <i class="fa-solid fa-cross transform hover:scale-110 transition-transform"></i>
-                    <i class="fa-solid fa-water transform hover:scale-110 transition-transform"></i>
-                    <i class="fa-solid fa-flask transform hover:scale-110 transition-transform"></i>
-                    <i class="fa-solid fa-crown transform hover:scale-110 transition-transform"></i>
+                
+                <div class="flex flex-wrap justify-center gap-10 md:gap-16 text-4xl md:text-5xl text-acym-orangelight drop-shadow-lg mb-10">
+                    <div class="flex flex-col items-center gap-3 group cursor-help w-20">
+                        <i class="fa-solid fa-cross transform group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xs md:text-sm font-bold tracking-widest text-white opacity-0 group-hover:opacity-100 transition-opacity uppercase">Salva</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 group cursor-help w-20">
+                        <i class="fa-solid fa-bowl-water transform group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xs md:text-sm font-bold tracking-widest text-white opacity-0 group-hover:opacity-100 transition-opacity uppercase">Santifica</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 group cursor-help w-20">
+                        <i class="fa-solid fa-bottle-droplet transform group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xs md:text-sm font-bold tracking-widest text-white opacity-0 group-hover:opacity-100 transition-opacity uppercase">Sana</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 group cursor-help w-20">
+                        <i class="fa-solid fa-crown transform group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xs md:text-sm font-bold tracking-widest text-white opacity-0 group-hover:opacity-100 transition-opacity uppercase">Viene</span>
+                    </div>
+                </div>
+
+                <div class="text-left bg-white/10 p-6 md:p-8 rounded-2xl border border-white/20 text-sm md:text-base leading-relaxed text-gray-100">
+                    <p class="mb-5 text-center md:text-lg">
+                        El logo de la Alianza Cristiana y Misionera (ACM) representa el <strong>«Evangelio Cuádruple»</strong> sobre un globo terráqueo. Estos elementos definen la misión de llevar el mensaje a todo el mundo:
+                    </p>
+                    <ul class="space-y-4 max-w-3xl mx-auto">
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-earth-americas text-acym-orangelight text-2xl mt-1"></i> 
+                            <span><strong>El Globo:</strong> Representa el mundo, la visión misionera de compartir el Evangelio hasta los últimos rincones de la tierra.</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-cross text-acym-orangelight text-2xl mt-1 ml-1"></i> 
+                            <span><strong>La Cruz:</strong> Simboliza a Jesucristo como nuestro <em>Salvador</em>, representando su muerte y resurrección para la redención del pecado.</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-bowl-water text-acym-orangelight text-xl mt-1 ml-0.5"></i> 
+                            <span><strong>La Copa (o Pila):</strong> Representa a Jesucristo como nuestro <em>Santificador</em>, simbolizando una vida consagrada al Espíritu Santo.</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-bottle-droplet text-acym-orangelight text-2xl mt-1 ml-1"></i> 
+                            <span><strong>La Vasija (de aceite):</strong> Simboliza a Jesucristo como nuestro <em>Sanador</em>, haciendo referencia a la unción y la sanidad bíblica.</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-crown text-acym-orangelight text-xl mt-1 ml-0.5"></i> 
+                            <span><strong>La Corona:</strong> Representa a Jesucristo como nuestro <em>Rey</em> que viene otra vez, simbolizando la esperanza de su segunda venida.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <p class="text-lg md:text-xl opacity-80 max-w-2xl mx-auto leading-relaxed">
+            <p class="text-lg md:text-xl opacity-80 max-w-2xl mx-auto leading-relaxed mt-12">
                 Una comunidad unida por el amor de Cristo, buscando hacer Su voluntad y llevar Su mensaje de esperanza a cada rincón de nuestra localidad.
             </p>
-            <div class="mt-10 flex flex-wrap justify-center gap-4">
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
                 <button onclick="showSection('mision')" class="bg-acym-orange hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold shadow-lg transition-all transform hover:scale-105">
                     Conoce nuestra Misión
                 </button>
@@ -134,10 +283,49 @@
                     
                     <h3 class="text-2xl font-bold text-acym-blue mb-4">Aniversario de la Iglesia Alianza Cristiana y Misionera de Crucero (1931 - 2025)</h3>
                     <p class="text-gray-700 leading-relaxed mb-8 text-justify">
-                        Al conmemorar el 94° aniversario de nuestra amada Iglesia Alianza Cristiana y Misionera en Crucero, recordamos con gratitud la fidelidad de Dios y el legado de fe de aquellos que sentaron las bases de esta obra... (rest of history text from precursors continues here)...
+                        Al conmemorar el 94° aniversario de nuestra amada Iglesia Alianza Cristiana y Misionera en Crucero, recordamos con gratitud la fidelidad de Dios y el legado de fe de aquellos que sentaron las bases de esta obra. La historia de nuestra congregación es un testimonio de esfuerzo, generosidad y, sobre todo, de la guía inquebrantable del Señor.
+                    </p>
+
+                    <h3 class="text-xl font-bold text-acym-orange mb-3">Los Inicios a Caballo y la Primera Semilla (1931)</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4 text-justify">
+                        Mucho antes de que el ferrocarril transformara el paisaje de la zona, el Evangelio ya se abría paso por estos valles y campos. La pastora Doraliza Gatica, una verdadera pionera, junto a otros pastores, extendió la labor misionera desde Río Bueno hacia las localidades del ramal. Montada a caballo, llevó las Buenas Nuevas a lugares como Ilihue, Ignao, Lago Ranco y, finalmente, Pitriuco.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-8 text-justify">
+                        Fue en este contexto de fervor misionero que se plantó la semilla de nuestra iglesia. La pastora Gatica dejó una huella imborrable, no solo a través de su predicación, sino también con un regalo invaluable: una hermosa Biblia Reina Valera 1900. En su dedicatoria, dejó constancia del nacimiento de la obra en Crucero, fechada el 19 de septiembre de 1931, día que con orgullo reconocemos como nuestra fecha de fundación.
+                    </p>
+
+                    <h3 class="text-xl font-bold text-acym-orange mb-3">Un Terreno para Soñar y el Primer Templo</h3>
+                    <p class="text-gray-700 leading-relaxed mb-8 text-justify">
+                        La generosidad ha sido un pilar fundamental en nuestra historia. Gracias a la visión y el desprendimiento del hermano Inocente Martel, a quien recordamos con profundo cariño, la congregación recibió en donación el terreno donde nos encontramos hasta el día de hoy. Este acto de fe permitió la construcción de nuestro primer templo, un lugar de refugio y alabanza para los primeros creyentes.
+                    </p>
+
+                    <h3 class="text-xl font-bold text-acym-orange mb-3">La Reconstrucción: Un Acto de Fe y Unidad (1959-1960)</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4 text-justify">
+                        Con el paso del tiempo, cerca de 20 años después, el primer templo mostraba las huellas del esfuerzo y el clima. La estructura se encontraba en muy malas condiciones, haciendo necesaria una reconstrucción. Dios levantó entonces a tres hombres valientes para liderar esta monumental tarea: los hermanos Pedro Montecinos Díaz, Juan Andrade y Alfredo Martínez.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-4 text-justify">
+                        El hermano Pedro Montecinos, como encargado de la obra, emprendió en 1959 las gestiones legales para que el terreno pasara formalmente a nombre de la Iglesia Alianza Cristiana y Misionera, contando con el apoyo del entonces presidente de Distrito, Diógenes Campos.
+                        Para la obtención de materiales, la providencia divina se manifestó a través del Sr. Oscar Daniel, dueño del aserradero local. Al enterarse del propósito de la compra, su corazón fue movido a generosidad y proveyó casi toda la madera necesaria, ofreciendo facilidades de pago a los hermanos.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-4 text-justify">
+                        Durante los aproximadamente ocho meses que duró la reconstrucción, la fe de la congregación no decayó. Los cultos y reuniones continuaron sin interrupción en el hogar de la hermana Baldomera Martínez, madre del hermano Alfredo. Este período fue sostenido por el esfuerzo colectivo de las familias aliancistas de la época —Montecinos, Martel, Andrade, Ríos, Díaz, Fuentes, Martínez, entre otras—, quienes no solo aportaron recursos, sino que también apoyaron emocional y económicamente a los hermanos que trabajaban en la construcción.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-8 text-justify">
+                        Aunque no existe una fecha exacta, la inauguración del templo que hoy nos acoge se celebró con gozo en diciembre de 1960.
+                    </p>
+
+                    <h3 class="text-xl font-bold text-acym-orange mb-3">Continuidad del Liderazgo y Crecimiento</h3>
+                    <p class="text-gray-700 leading-relaxed mb-8 text-justify">
+                        Unos cinco años después, los hermanos Pedro Montecinos y Juan Andrade se trasladaron a Río Bueno, dejando al hermano Alfredo Martínez como encargado de la obra en Crucero, un rol que desempeñó con fidelidad durante muchos años.
+                        El pastoreo de la congregación fue apoyado inicialmente desde La Unión y, posteriormente, al crecer la iglesia en Río Bueno, se designaron pastores desde esa ciudad para atender también a nuestra comunidad.
+                    </p>
+
+                    <h3 class="text-xl font-bold text-acym-orange mb-3">Presente y Futuro: Guiados por Dios</h3>
+                    <p class="text-gray-700 leading-relaxed mb-6 text-justify">
+                        Hoy, nuestra congregación cuenta con 22 miembros activos que continúan el legado de fe y servicio. Desde marzo de 2022, tenemos la bendición de ser guiados por nuestro Pastor Joel Nauto y su esposa, nuestra hermana Rossi.
                     </p>
                     <p class="text-gray-700 leading-relaxed text-justify font-medium text-acym-blue bg-blue-50 p-5 rounded-2xl border border-blue-100 shadow-sm">
-                        Al mirar atrás, vemos la mano de Dios en cada paso... (text remains)
+                        Al mirar atrás, vemos la mano de Dios en cada paso, en cada desafío y en cada victoria. Damos gracias por 94 años de historia, y miramos hacia el futuro con la certeza de que el mismo Dios que nos guio en el pasado continuará siendo nuestra luz y fortaleza en los años venideros.
                     </p>
                 </div>
 
@@ -157,7 +345,83 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <section id="sec-mision" class="content-section hidden max-w-6xl mx-auto animate-fade-in mt-12">
+            <div class="text-center mb-10 text-white">
+                <h2 class="text-3xl md:text-5xl font-bold mb-2">Visión y Misión</h2>
+                <p class="opacity-80">El propósito que guía a nuestra congregación</p>
+            </div>
+            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+                <div class="glass-card p-8 md:p-10 rounded-3xl border-t-4 border-acym-orange hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-orange-100">
+                        <i class="fa-solid fa-eye text-3xl text-acym-orange"></i>
                     </div>
+                    <h3 class="text-3xl font-bold text-acym-blue mb-4">Visión Local - ACyM Crucero</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg text-justify">
+                        Ser una comunidad de fe y en constante crecimiento, arraigada profundamente en la Palabra de Dios y guiada por el Espíritu Santo, que refleje el amor, la compasión y la misericordia de Jesucristo, para que, a través de vidas transformadas y un testimonio auténtico, Su nombre sea exaltado como Salvador, Santificador, Sanador y Rey que Viene, impactando a Crucero y sus alrededores.
+                    </p>
+                </div>
+                <div class="glass-card p-8 md:p-10 rounded-3xl border-t-4 border-acym-blue hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                        <i class="fa-solid fa-hands-holding-circle text-3xl text-acym-blue"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-acym-blue mb-4">Misión Local - ACyM Crucero</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg text-justify">
+                        Dar a conocer y vivir el mensaje integral de salvación de Jesucristo a toda persona en Crucero y sus alrededores, mediante la enseñanza fiel de Su Palabra, una adoración genuina, la comunión fraternal activa, y el servicio compasivo, social y comunal; fomentando discípulos que experimenten Su sanidad y santificación, y así glorifiquen a Dios en cada aspecto de sus vidas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sec-fe" class="content-section hidden max-w-5xl mx-auto animate-fade-in mt-12">
+            <div class="text-center mb-10 text-white">
+                <h2 class="text-3xl md:text-5xl font-bold mb-2">Declaración de Fe</h2>
+            </div>
+            <div class="glass-card p-8 md:p-12 rounded-3xl text-center border-t-4 border-acym-orange/70">
+                <img src="./assets/img/image_112a84.png" alt="Declaración de Fe" class="w-48 h-48 mx-auto mb-6 object-contain rounded-xl" onerror="this.style.display='none'">
+                <h3 class="text-2xl font-bold text-acym-blue mb-4">Fundamentos Bíblicos</h3>
+                <p class="text-gray-600 leading-relaxed text-lg max-w-3xl mx-auto">
+                    Nuestra doctrina se basa enteramente en la Palabra de Dios. Creemos en la Trinidad, en la salvación por gracia a través de la fe en Jesucristo, en la obra santificadora del Espíritu Santo, en la sanidad divina y en la inminente segunda venida de nuestro Señor.
+                </p>
+            </div>
+        </section>
+
+        <section id="sec-ufa" class="content-section hidden max-w-5xl mx-auto animate-fade-in mt-12">
+            <div class="glass-card p-8 md:p-12 rounded-3xl border-t-4 border-rose-500">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-rose-100 rounded-full flex items-center justify-center text-rose-500 text-2xl"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="text-3xl font-bold text-acym-blue">Unión Femenina Aliancista (UFA)</h3>
+                </div>
+                <p class="text-gray-600 leading-relaxed text-lg">La UFA es el motor de oración y servicio de las mujeres en nuestra congregación... *(En construcción)*</p>
+            </div>
+        </section>
+
+        <section id="sec-eedd" class="content-section hidden max-w-4xl mx-auto animate-fade-in mt-16 text-center">
+            <div class="glass-card p-12 rounded-3xl border-t-4 border-cyan-500">
+                <i class="fa-solid fa-book-bible text-6xl text-cyan-300 mb-6"></i>
+                <h2 class="text-3xl font-bold text-cyan-600 mb-4">Escuela Dominical (EEDD)</h2>
+                <p class="text-gray-500 text-lg">Pronto publicaremos los recursos y clases de nuestros niños.</p>
+            </div>
+        </section>
+        <section id="sec-estudio" class="content-section hidden max-w-4xl mx-auto animate-fade-in mt-16 text-center">
+            <div class="glass-card p-12 rounded-3xl border-t-4 border-amber-500">
+                <i class="fa-solid fa-book-open-reader text-6xl text-amber-300 mb-6"></i>
+                <h2 class="text-3xl font-bold text-amber-600 mb-4">Estudio Bíblico</h2>
+            </div>
+        </section>
+        <section id="sec-consejo" class="content-section hidden max-w-4xl mx-auto animate-fade-in mt-16 text-center">
+            <div class="glass-card p-12 rounded-3xl border-t-4 border-acym-blue">
+                <i class="fa-solid fa-person-chalkboard text-6xl text-gray-300 mb-6"></i>
+                <h2 class="text-3xl font-bold text-acym-blue mb-4">Consejo Ministerial</h2>
+            </div>
+        </section>
+        <section id="sec-galeria" class="content-section hidden max-w-4xl mx-auto animate-fade-in mt-16 text-center">
+            <div class="glass-card p-12 rounded-3xl border-t-4 border-purple-500">
+                <i class="fa-solid fa-images text-6xl text-purple-300 mb-6"></i>
+                <h2 class="text-3xl font-bold text-purple-600 mb-4">Galería de Fotos</h2>
             </div>
         </section>
 
@@ -252,13 +516,46 @@
                     <a href="https://www.youtube.com/@ACyMCrucero" target="_blank" class="hover:text-[#FF0000] transform hover:scale-110 transition-all"><i class="fa-brands fa-youtube"></i></a>
                 </div>
                 <div class="text-xs text-gray-400 mt-2">
-                    Copyright &copy; 2026 Iglesia ACyM Crucero. <br>
-                    Todos los derechos reservados.
+                    Copyright &copy; 2026 Iglesia ACyM Crucero. Todos los derechos reservados.
                 </div>
             </div>
 
         </div>
     </footer>
+
+    <div id="modal-backdrop" class="fixed inset-0 bg-acym-blue/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4 transition-opacity opacity-0">
+        <div id="modal-content" class="glass-modal rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden transform scale-95 transition-transform">
+            <div class="bg-gray-50 px-6 py-4 border-b border-gray-100 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div id="modal-icon" class="w-10 h-10 rounded-full flex items-center justify-center text-white text-lg shadow-md">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <div>
+                        <h3 id="modal-name" class="font-bold text-gray-800 text-lg leading-tight">Nombre</h3>
+                        <p id="modal-date" class="text-sm text-gray-500 font-medium">Fecha</p>
+                    </div>
+                </div>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-acym-orange bg-white border border-gray-200 hover:bg-orange-50 rounded-full w-8 h-8 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 relative">
+                    <i class="fa-brands fa-whatsapp absolute right-4 bottom-4 text-6xl text-green-500 opacity-5 pointer-events-none"></i>
+                    <textarea id="modal-message" readonly class="w-full bg-transparent border-none resize-none focus:ring-0 text-gray-700 text-sm md:text-base leading-relaxed h-48" style="outline:none;"></textarea>
+                </div>
+            </div>
+            <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-end">
+                <button onclick="copyToClipboard()" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2.5 px-6 rounded-lg flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Copiar mensaje
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="toast" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-6 py-3 rounded-full flex items-center gap-3 opacity-0 translate-y-10 transition-all z-[110]">
+        <i class="fa-solid fa-check-circle text-green-400"></i> <span class="font-medium text-sm">¡Mensaje copiado!</span>
+    </div>
 
     <script src="./js/app.js"></script>
 </body>
