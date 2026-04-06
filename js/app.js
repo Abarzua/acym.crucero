@@ -93,6 +93,8 @@ const birthdays = [
     { month: 2, day: 18, date: "18 de Marzo", name: "Hno. Luis Antonio Abarzúa", type: "M-A", message: "🎂 ¡Feliz cumpleaños, hermano Luis! Que la paz de Dios gobierne su corazón y que sus proyectos en este nuevo año sean prosperados por la mano del Señor.\n\n📖 *\"Encomienda a Jehová tus obras, Y tus pensamientos serán afirmados.\"* - Proverbios 16:3 (RVR1960)" },
 
     // ABRIL
+    // Nuevo hermano agregado el 06-04-2026
+    { month: 3, day: 15, date: "15 de Abril", name: "Hno. Alberto Vera Maldonado", type: "M-A", message: "🎂 ¡Feliz cumpleaños, hermano Alberto! De parte de toda la congregación le enviamos un abrazo afectuoso. Que la gracia y la paz de nuestro Dios le acompañen siempre en este nuevo año de vida.\n\n📖 *\"El justo florecerá como la palmera; Crecerá como cedro en el Líbano.\"* - Salmos 92:12 (RVR1960)" },
     { month: 3, day: 28, date: "28 de Abril", name: "Hna. Rosita Sandalla", type: "F-A", message: "🌸 ¡Feliz cumpleaños, hermana Rosa! Damos gracias a Dios por su vida y su fidelidad. Que tenga un día lleno del amor de los suyos y del cuidado celestial.\n\n📖 *\"Porque yo sé los pensamientos que tengo acerca de vosotros, dice Jehová, pensamientos de paz, y no de mal, para daros el fin que esperáis.\"* - Jeremías 29:11 (RVR1960)" },
 
     // MAYO
