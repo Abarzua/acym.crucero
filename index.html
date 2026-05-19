@@ -195,14 +195,30 @@
 
     <main class="flex-grow w-full px-4 md:px-8 pb-16">
         
-        <section id="sec-inicio" class="content-section hidden max-w-6xl mx-auto text-center text-white mt-12 animate-fade-in">
-            <div class="inline-flex p-2 rounded-full bg-white backdrop-blur-sm mb-6 border-4 border-acym-orange/80 shadow-2xl w-32 h-32 md:w-44 md:h-44 transform transition hover:scale-105 duration-300 items-center justify-center">
-                <img src="./assets/img/Logo_Crucero_Acym.png" alt="Logo ACyM Grande" class="w-full h-full object-contain drop-shadow-xl p-2" onerror="this.style.display='none'">
-            </div>
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">Bienvenido a nuestra familia</h1>
-            <h2 class="text-2xl md:text-3xl font-light opacity-90 mb-10">Iglesia ACyM Crucero</h2>
+<section id="sec-inicio" class="content-section hidden animate-fade-in w-full">
             
-            <div class="px-6 py-10 max-w-5xl mx-auto mb-10 bg-black/30 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl">
+            <div class="relative w-[calc(100%+2rem)] md:w-[calc(100%+4rem)] -ml-4 md:-ml-8 -mt-6 mb-12 h-[50vh] min-h-[420px] flex flex-col items-center justify-center overflow-hidden shadow-2xl">
+                
+                <div class="absolute inset-0 z-0">
+                    <img src="./assets/img/templo_portada.jpg" alt="Templo ACyM Crucero" class="w-full h-full object-cover filter blur-[3px] brightness-[0.35] scale-105">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A2540]/50 to-[#0A2540]"></div>
+                </div>
+
+                <div class="relative z-10 text-center flex flex-col items-center px-4 mt-8 md:mt-12">
+                    
+                    <div class="inline-flex p-2 rounded-full bg-white backdrop-blur-sm mb-6 border-4 border-acym-orange shadow-2xl w-32 h-32 md:w-44 md:h-44 transform transition hover:scale-105 duration-300 items-center justify-center">
+                        <img src="./assets/img/Logo_Crucero_Acym.png" alt="Logo ACyM Grande" class="w-full h-full object-contain drop-shadow-xl p-2" onerror="this.style.display='none'">
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight text-white drop-shadow-2xl">Bienvenido a nuestra familia</h1>
+                    <h2 class="text-2xl md:text-3xl font-light text-gray-200 drop-shadow-lg mb-4">Iglesia ACyM Crucero</h2>
+                </div>
+            </div>
+
+            <div class="max-w-6xl mx-auto text-center text-white px-4">
+                
+                <div class="px-6 py-10 max-w-5xl mx-auto mb-10 bg-black/30 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl">
                 <h3 class="text-3xl md:text-4xl lg:text-[2.75rem] font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-200 tracking-[0.15em] uppercase leading-tight font-sans mb-10">
                     Cristo <span class="text-acym-orangelight">Salva</span>,
                     <span class="text-acym-orangelight">Santifica</span>,<br>
